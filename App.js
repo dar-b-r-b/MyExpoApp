@@ -1,40 +1,21 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Button } from "react-native";
-import { useState } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { PaperProvider } from "react-native-paper";
+import { Counter } from "./Counter";
+
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Home } from "./Home";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [count, setCount] = useState(0);
   return (
-    <View style={styles.container}>
-      <Text>{count}</Text>
-      <Button
-        onPress={() => {
-          setCount(count + 1);
-        }}
-        title="+"
-      ></Button>
-      <Button
-        onPress={() => {
-          setCount(count - 1);
-        }}
-        title="-"
-      ></Button>
-      <Button
-        onPress={() => {
-          setCount(0);
-        }}
-        title="Сбросить"
-      ></Button>
-      <StatusBar style="auto" />
-    </View>
+    <PaperProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={Home}></Stack.Screen>
+          <Stack.Screen name="Counter" component={Counter} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </PaperProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 4,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
