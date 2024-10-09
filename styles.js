@@ -13,6 +13,12 @@ export const styles = StyleSheet.create({
     backgroundColor: "#fff",
     marginBottom: 20,
   },
+  containerButtonAddCounter: {
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
+    marginBottom: 30,
+  },
   //content
   textCount: {
     fontSize: 128,
@@ -30,7 +36,7 @@ export const styles = StyleSheet.create({
     fontSize: 32,
   },
   iconButtonContent: {
-    marginLeft: 10,
+    marginLeft: 15,
   },
   card: {
     borderWidth: 1,
@@ -51,7 +57,16 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
     width: 200,
   },
-  buttonCounter: {
+  buttonGoToCounter: {
     marginRight: 20,
+  },
+  buttonAddCounter: {
+    borderRadius: 100,
+    height: 90,
+    width: 90,
+  },
+  //other
+  hidden: {
+    display: "none",
   },
 });
