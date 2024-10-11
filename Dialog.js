@@ -9,21 +9,26 @@ export function DialogWindow({
   setMessage,
   repeat,
   setRepeat,
-  values,
   setValues,
 }) {
   const _onPressOK = () => {
     if (message === "" || step === 0 || repeat === 0) {
       alert("Заполните все поля");
-    } else console.log(step, message, repeat);
-    setValues(Array.from({ length: repeat }, (_, i) => (i + 1) * step));
-    console.log(values);
+    } else {
+      console.log(step, message, repeat);
+      setValues(Array.from({ length: repeat }, (_, i) => (i + 1) * step));
+      hideDialog();
+      setStep(0);
+      setRepeat(0);
+    }
+  };
+
+  const _onPressCancel = () => {
     hideDialog();
     setStep(0);
     setRepeat(0);
     setMessage("");
   };
-
   return (
     <Portal>
       <Dialog visible={visible} onDismiss={hideDialog}>
@@ -51,7 +56,7 @@ export function DialogWindow({
           />
         </Dialog.Content>
         <Dialog.Actions>
-          <Button onPress={hideDialog}>Отмена</Button>
+          <Button onPress={_onPressCancel}>Отмена</Button>
           <Button onPress={_onPressOK}>OK</Button>
         </Dialog.Actions>
       </Dialog>

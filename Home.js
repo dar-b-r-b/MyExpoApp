@@ -2,15 +2,15 @@ import { Button, PaperProvider, Card } from "react-native-paper";
 import { styles } from "./styles";
 import { View } from "react-native";
 
-export function Home({ navigation }) {
+export function Home({ navigation, projectName }) {
   return (
     <PaperProvider>
       <Card.Title
-        title="Card Title"
+        title="Counter"
         titleVariant="headlineSmall"
         subtitle="Card Subtitle"
         style={styles.card}
-        right={(props) => (
+        right={() => (
           <Button
             mode="contained"
             style={styles.buttonGoToCounter}

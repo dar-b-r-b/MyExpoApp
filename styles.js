@@ -65,8 +65,4 @@ export const styles = StyleSheet.create({
     height: 90,
     width: 90,
   },
-  //other
-  hidden: {
-    display: "none",
-  },
 });

@@ -9,7 +9,7 @@ export function Counter() {
   const [visible, setVisible] = useState(false);
   const [step, setStep] = useState(0);
   const [repeat, setRepeat] = useState(0);
-  const [message, setMessage] = useState("Test");
+  const [message, setMessage] = useState("");
 
   const showDialog = () => setVisible(true);
   const hideDialog = () => setVisible(false);
@@ -19,14 +19,10 @@ export function Counter() {
   return (
     <PaperProvider>
       <View style={styles.container}>
-        <Text
-          variant="displaySmall"
-          style={values.some((el) =>
-            el === count ? styles.textMessage : styles.hidden
-          )}
-        >
-          {message}
+        <Text variant="displaySmall" style={styles.textMessage}>
+          {values.includes(count) ? message : null}
         </Text>
+
         <Text style={styles.textCount}>{count}</Text>
 
         <View style={styles.containerButton}>
@@ -72,7 +68,6 @@ export function Counter() {
           repeat={repeat}
           setRepeat={setRepeat}
           hideDialog={hideDialog}
-          values={values}
           setValues={setValues}
         />
       </View>
