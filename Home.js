@@ -2,7 +2,7 @@ import { Button, PaperProvider, Card } from "react-native-paper";
 import { styles } from "./styles";
 import { View } from "react-native";
 
-export function Home({ navigation, projectName }) {
+export function Home({ navigation }) {
   return (
     <PaperProvider>
       <Card.Title
@@ -20,16 +20,21 @@ export function Home({ navigation, projectName }) {
           </Button>
         )}
       />
-      <View style={styles.containerButtonAddCounter}>
-        <Button
-          icon="plus"
-          mode="contained"
-          style={styles.buttonAddCounter}
-          labelStyle={styles.icon}
-          contentStyle={styles.iconButtonContent}
-          onPress={() => alert("Скоро здесь будет фича")}
-        ></Button>
-      </View>
+      <Card.Title
+        title="Calc"
+        titleVariant="headlineSmall"
+        subtitle="Card Subtitle"
+        style={styles.card}
+        right={() => (
+          <Button
+            mode="contained"
+            style={styles.buttonGoToCounter}
+            onPress={() => navigation.navigate("Yarn density calculator")}
+          >
+            Калькулятор
+          </Button>
+        )}
+      />
     </PaperProvider>
   );
 }

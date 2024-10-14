@@ -46,11 +46,13 @@ export function Counter() {
         <Button
           mode="contained"
           style={styles.resetButton}
+          labelStyle={styles.textInButton}
           onPress={() => setCount(0)}
         >
           Сброс
         </Button>
         <Button
+          labelStyle={styles.textInButton}
           mode="contained"
           onPress={() => {
             showDialog();

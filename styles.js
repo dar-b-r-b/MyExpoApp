@@ -1,50 +1,28 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  //container
+  //Counter.js
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
   containerButton: {
     flexDirection: "row",
-    backgroundColor: "#fff",
+
     marginBottom: 20,
   },
-  containerButtonAddCounter: {
-    flex: 1,
-    justifyContent: "flex-end",
-    alignItems: "center",
-    marginBottom: 30,
-  },
-  //content
   textCount: {
     fontSize: 128,
     marginBottom: 20,
   },
-
   icon: {
     fontSize: 64,
-  },
-  iconArrowBack: {
-    fontSize: 32,
   },
   textMessage: {
     marginBottom: 30,
     fontSize: 32,
   },
-  iconButtonContent: {
-    marginLeft: 15,
-  },
-  card: {
-    borderWidth: 1,
-    borderRadius: 4,
-    backgroundColor: "#FFFFFF",
-    marginTop: 10,
-  },
-  //button
   button: {
     alignItems: "center",
     justifyContent: "center",
@@ -55,7 +33,19 @@ export const styles = StyleSheet.create({
   },
   resetButton: {
     marginBottom: 20,
-    width: 200,
+    width: 270,
+  },
+
+  //Home.js
+
+  iconButtonContent: {
+    marginLeft: 15,
+  },
+  card: {
+    borderWidth: 1,
+    borderRadius: 4,
+    backgroundColor: "#FFFFFF",
+    marginTop: 10,
   },
   buttonGoToCounter: {
     marginRight: 20,
@@ -64,5 +54,35 @@ export const styles = StyleSheet.create({
     borderRadius: 100,
     height: 90,
     width: 90,
+  },
+
+  //DensityCalc.js
+  containerForButton: {
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
+    marginBottom: 30,
+  },
+  containerForInputs: {
+    flexDirection: "row",
+    marginTop: 10,
+  },
+  label: {
+    fontSize: 25,
+    marginLeft: 20,
+    marginTop: 30,
+  },
+  input: {
+    marginLeft: 20,
+    width: 120,
+  },
+  buttonCalc: {
+    marginTop: 30,
+    width: 240,
+  },
+  textInButton: {
+    marginTop: 20,
+    marginBottom: 20,
+    fontSize: 20,
   },
 });
