@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { PaperProvider, Button, Text } from "react-native-paper";
 import { styles } from "./styles";
 import { DialogWindow } from "./Dialog";
+import { theme } from "./theme";
 
 export function Counter() {
   const [count, setCount] = useState(0);
@@ -17,7 +18,7 @@ export function Counter() {
   const [values, setValues] = useState([]);
 
   return (
-    <PaperProvider>
+    <PaperProvider theme={theme}>
       <View style={styles.container}>
         <Text variant="displaySmall" style={styles.textMessage}>
           {values.includes(count) ? message : null}

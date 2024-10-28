@@ -1,4 +1,5 @@
 import { Button, Dialog, Portal, TextInput } from "react-native-paper";
+import { theme } from "./theme";
 
 export function DialogWindow({
   step,
@@ -30,7 +31,7 @@ export function DialogWindow({
     setMessage("");
   };
   return (
-    <Portal>
+    <Portal theme={theme}>
       <Dialog visible={visible} onDismiss={hideDialog}>
         <Dialog.Title>Введите данные</Dialog.Title>
         <Dialog.Content>

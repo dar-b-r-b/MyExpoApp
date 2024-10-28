@@ -1,17 +1,16 @@
-import { useState } from "react";
-import { NavigationContainer } from "@react-navigation/native";
 import { PaperProvider } from "react-native-paper";
-import { Counter } from "./Counter";
-import { DensityCalc } from "./DensityCalc";
-
+import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Counter } from "./Counter";
 import { Home } from "./Home";
+import { DensityCalc } from "./DensityCalc";
+import { theme } from "./theme";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <PaperProvider>
+    <PaperProvider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Home}></Stack.Screen>

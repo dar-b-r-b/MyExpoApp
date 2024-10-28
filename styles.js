@@ -9,15 +9,15 @@ export const styles = StyleSheet.create({
   },
   containerButton: {
     flexDirection: "row",
-
     marginBottom: 20,
   },
   textCount: {
-    fontSize: 128,
+    fontSize: 150,
     marginBottom: 20,
   },
   icon: {
-    fontSize: 64,
+    fontSize: 70,
+    marginLeft: 10,
   },
   textMessage: {
     marginBottom: 30,
@@ -26,8 +26,8 @@ export const styles = StyleSheet.create({
   button: {
     alignItems: "center",
     justifyContent: "center",
-    height: 80,
-    width: 80,
+    height: 100,
+    width: 100,
     marginLeft: 20,
     marginRight: 20,
   },
@@ -37,23 +37,34 @@ export const styles = StyleSheet.create({
   },
 
   //Home.js
-
-  iconButtonContent: {
-    marginLeft: 15,
+  containerForCards: {
+    flexDirection: "row",
+    height: 210,
+    marginLeft: 5,
   },
   card: {
-    borderWidth: 1,
+    flexDirection: "column",
     borderRadius: 4,
     backgroundColor: "#FFFFFF",
     marginTop: 10,
+    width: 190,
+    marginLeft: 5,
   },
-  buttonGoToCounter: {
+  buttonNavigate: {
+    marginBottom: 20,
     marginRight: 20,
   },
-  buttonAddCounter: {
-    borderRadius: 100,
-    height: 90,
-    width: 90,
+  cardImage: {
+    width: 130,
+    height: 130,
+    marginLeft: 30,
+    marginTop: 10,
+    marginBottom: 10,
+    resizeMode: "contain",
+    backgroundColor: "#FFFFFF",
+  },
+  textInButtonNavigate: {
+    fontSize: 20,
   },
 
   //DensityCalc.js
@@ -84,5 +95,10 @@ export const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20,
     fontSize: 20,
+  },
+  resultText: {
+    marginTop: 60,
+    marginLeft: 30,
+    marginRight: 20,
   },
 });
