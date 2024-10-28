@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { View } from "react-native";
 import { PaperProvider, Button, Text } from "react-native-paper";
 import { styles } from "./styles";
 import { DialogWindow } from "./Dialog";
 import { theme } from "./theme";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export function Counter() {
   const [count, setCount] = useState(0);
@@ -16,6 +17,48 @@ export function Counter() {
   const hideDialog = () => setVisible(false);
 
   const [values, setValues] = useState([]);
+
+  const [isInit, setIsInit] = useState(false);
+
+  const getData = async () => {
+    try {
+      console.log("getData");
+      const jsonValue = await AsyncStorage.getItem("counter-data");
+      const data = jsonValue != null ? JSON.parse(jsonValue) : null;
+      setCount(data.count);
+      setStep(data.step);
+      setRepeat(data.repeat);
+      setMessage(data.message);
+      setValues(data.values);
+      setIsInit(true);
+      console.log("done");
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const storeData = async () => {
+    console.log("storeData");
+    const dataObj = { count, step, repeat, message, values };
+
+    try {
+      const jsonValue = JSON.stringify(dataObj);
+      await AsyncStorage.setItem("counter-data", jsonValue);
+      console.log(jsonValue);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    if (isInit) {
+      storeData();
+    }
+  }, [count, step, repeat, message, values]);
 
   return (
     <PaperProvider theme={theme}>
