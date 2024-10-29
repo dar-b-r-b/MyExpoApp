@@ -17,7 +17,7 @@ export function DialogWindow({
       alert("Заполните все поля");
     } else {
       console.log(step, message, repeat);
-      setValues(Array.from({ length: repeat }, (_, i) => (i + 1) * step));
+      setValues(Array.from({ length: repeat }, (_, i) => (i + 1) * step - 1));
       hideDialog();
       setStep(0);
       setRepeat(0);
