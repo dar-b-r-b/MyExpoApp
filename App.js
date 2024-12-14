@@ -15,14 +15,11 @@ export default function App() {
     <PaperProvider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home}></Stack.Screen>
-          <Stack.Screen name="Counter" component={Counter} />
-          <Stack.Screen
-            name="Yarn density calculator"
-            component={DensityCalc}
-          />
-          <Stack.Screen name="Tools" component={Tools}></Stack.Screen>
-          <Stack.Screen name="Yarns" component={Yarns}></Stack.Screen>
+          <Stack.Screen name="Главная" component={Home}></Stack.Screen>
+          <Stack.Screen name="Счетчик" component={Counter} />
+          <Stack.Screen name="Калькулятор" component={DensityCalc} />
+          <Stack.Screen name="Инструменты" component={Tools}></Stack.Screen>
+          <Stack.Screen name="Пряжа" component={Yarns}></Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

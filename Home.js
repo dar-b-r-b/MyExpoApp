@@ -9,28 +9,28 @@ export function Home({ navigation }) {
       name: "Счетчик",
       cover: require("./assets/counter.png"),
       link: function () {
-        navigation.navigate("Counter");
+        navigation.navigate("Счетчик");
       },
     },
     {
       name: "Калькулятор",
       cover: require("./assets/calc.png"),
       link: function () {
-        navigation.navigate("Yarn density calculator");
+        navigation.navigate("Калькулятор");
       },
     },
     {
       name: "Инструменты",
       cover: require("./assets/needles.png"),
       link: function () {
-        navigation.navigate("Tools");
+        navigation.navigate("Инструменты");
       },
     },
     {
       name: "Пряжа",
       cover: require("./assets/yarns.png"),
       link: function () {
-        navigation.navigate("Yarns");
+        navigation.navigate("Пряжа");
       },
     },
   ];
