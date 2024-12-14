@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   },
   resetButton: {
     marginBottom: 20,
-    width: 270,
+    width: 250,
   },
 
   //Home.js
@@ -123,5 +123,9 @@ export const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 15,
     fontSize: 18,
+  },
+  containerForListItem: {
+    flexDirection: "row",
+    width: 360, // исправить, найти вариант гибкой ширины
   },
 });

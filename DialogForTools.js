@@ -80,7 +80,12 @@ export function DialogWindow({
   const _onPressCancel = () => {
     hideDialog();
   };
-
+  const clearAllInputs = () => {
+    setCategory("");
+    setLength(0);
+    setSize(0);
+    setTypeOfNeedle("");
+  };
   return (
     <Portal theme={theme}>
       <Dialog visible={visible} onDismiss={hideDialog}>
@@ -116,8 +121,22 @@ export function DialogWindow({
           />
         </Dialog.Content>
         <Dialog.Actions>
-          <Button onPress={_onPressCancel}>Отмена</Button>
-          <Button onPress={_onPressOK}>OK</Button>
+          <Button
+            onPress={() => {
+              _onPressCancel();
+              clearAllInputs();
+            }}
+          >
+            Отмена
+          </Button>
+          <Button
+            onPress={() => {
+              _onPressOK();
+              clearAllInputs();
+            }}
+          >
+            OK
+          </Button>
         </Dialog.Actions>
       </Dialog>
     </Portal>

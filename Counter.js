@@ -23,12 +23,32 @@ export function Counter() {
   const getData = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem("counter-data");
-      const data = jsonValue != null ? JSON.parse(jsonValue) : null;
-      setCount(data.count);
-      setStep(data.step);
-      setRepeat(data.repeat);
-      setMessage(data.message);
-      setValues(data.values);
+      if (jsonValue === null) {
+        const initialDataForCounter = {
+          count: 0,
+          step: 0,
+          repeat: 0,
+          message: "",
+          values: [],
+        };
+        await AsyncStorage.setItem(
+          "counter-data",
+          JSON.stringify(initialDataForCounter)
+        );
+        setCount(initialDataForCounter.count);
+        setStep(initialDataForCounter.step);
+        setRepeat(initialDataForCounter.repeat);
+        setMessage(initialDataForCounter.message);
+        setValues(initialDataForCounter.values);
+      } else {
+        const data = JSON.parse(jsonValue);
+        setCount(data.count);
+        setStep(data.step);
+        setRepeat(data.repeat);
+        setMessage(data.message);
+        setValues(data.values);
+      }
+
       setIsInit(true);
     } catch (e) {
       console.log(e);
