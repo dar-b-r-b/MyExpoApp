@@ -95,9 +95,8 @@ export function Tools() {
         <Divider bold="true" />
         {needles.map((n) => {
           return (
-            <View style={styles.containerForListItem}>
+            <View key={n.id} style={styles.containerForListItem}>
               <List.Item
-                key={n.id}
                 style={styles.listItem}
                 title={`${n.type} ${n.name}`}
                 description={`${n.size} мм ${n.length} см`}
@@ -113,9 +112,8 @@ export function Tools() {
         <Divider bold="true" />
         {hooks.map((h) => {
           return (
-            <View style={styles.containerForListItem}>
+            <View key={h.id} style={styles.containerForListItem}>
               <List.Item
-                key={h.id}
                 style={styles.listItem}
                 title={h.name}
                 description={`${h.size} мм`}
@@ -131,9 +129,8 @@ export function Tools() {
         <Divider bold="true" />
         {cables.map((c) => {
           return (
-            <View style={styles.containerForListItem}>
+            <View key={c.id} style={styles.containerForListItem}>
               <List.Item
-                key={c.id}
                 style={styles.listItem}
                 title={c.name}
                 description={`${c.length} см`}

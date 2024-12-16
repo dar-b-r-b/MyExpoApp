@@ -61,6 +61,7 @@ export function DialogWindow({ visible, hideDialog, yarns, setYarns }) {
           />
           <TextInput
             label="Плотность"
+            keyboardType="numeric"
             onChangeText={(text) => setDensity(+text)}
             mode="outlined"
           />
@@ -71,6 +72,7 @@ export function DialogWindow({ visible, hideDialog, yarns, setYarns }) {
           />
           <TextInput
             label="Вес"
+            keyboardType="numeric"
             onChangeText={(text) => setWeight(+text)}
             mode="outlined"
           />

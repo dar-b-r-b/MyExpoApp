@@ -78,9 +78,8 @@ export function Yarns() {
       <ScrollView>
         {yarns.map((y) => {
           return (
-            <View style={styles.containerForListItem}>
+            <View key={y.id} style={styles.containerForListItem}>
               <List.Item
-                key={y.id}
                 style={styles.listItem}
                 title={`${y.name}, ${y.compound}`}
                 description={`${y.density} м/100 гр, ${y.color}, ${y.weight} гр`}
