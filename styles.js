@@ -128,4 +128,10 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     width: 360, // исправить, найти вариант гибкой ширины
   },
+  searchbar: {
+    width: 390,
+    marginLeft: 10,
+    marginTop: 10,
+    marginBottom: 10,
+  },
 });
